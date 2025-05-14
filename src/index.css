@@ -1,0 +1,159 @@
+@font-face {
+  font-family: Roboto-400;
+  src: url(../src/fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: Roboto-500;
+  src: url(../src/fonts/Roboto-Medium.ttf);
+}
+
+@font-face {
+  font-family: Roboto-700;
+  src: url(../src/fonts/Roboto-Bold.ttf);
+}
+
+html {
+  box-sizing: border-box;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+
+:root {
+  /* COLORS */
+  --black-color: #040404;
+  --orange-main-color: #e6533c;
+  --orange-secondary-color: #ef8964;
+  --beige-color: #efa082;
+  --white-color: #efede8;
+  --success-color: #3cbf61;
+  --error-color: #d80027;
+  --variant-error-color: #e9101d;
+  --variant-success-color: #3cbf61;
+  --option-list-color: #1c1c1c;
+  --radio-color: #636366;
+
+  /* FONTS */
+  --regular: font-weight: 400;
+  --medium: font-weight: 500;
+  --bold: font-weight: 700;
+
+  /* ANIMATIONS */
+  --function-duration: 350ms;
+  --function-timing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.container {
+  /* outline: solid 1px red; */
+  max-width: 375px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.no-scroll {
+  /* overflow: hidden; */
+  position: fixed;
+}
+
+.modal-backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: scale(1.3);
+}
+
+body {
+  margin: 0;
+  background-color: var(--black-color);
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+button,
+a,
+input,
+p {
+  font-family: Roboto-400, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+img {
+  display: block;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.active {
+  background: #E6533C;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .container {
+    max-width: none;
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: none;
+    margin-left: 96px;
+    margin-right: 96px;
+  }
+}
+
+/*
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+*/

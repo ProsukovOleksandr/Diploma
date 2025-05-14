@@ -1,0 +1,46 @@
+.wrappers {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.wrapper {
+  display: flex;
+  gap: 8px;
+  margin-top: 40px;
+}
+
+.icon_mark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  width: 24px;
+  height: 24px;
+  fill: var(--beige-color);
+  stroke: #fff;
+}
+.text {
+  font-family: Roboto-400;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  color: rgba(239, 237, 232, 0.3);
+}
+
+@media screen and (min-width: 768px) {
+  .wrappers{
+    margin-bottom: 32px;
+  }
+  .wrapper {
+    width: 440px;
+    margin-top: 32px;
+  }
+  .text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+}

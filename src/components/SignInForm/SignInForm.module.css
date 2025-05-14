@@ -1,0 +1,248 @@
+.loginContainer {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.formContainer {
+    width: 100%;
+    max-width: 335px;
+    margin: 0;
+    padding-top: 90px;
+}
+
+.link {
+    color: rgba(239, 237, 232, 1);
+    text-decoration: underline;
+}
+
+.description {
+    color: rgba(239, 237, 232, 0.6);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E6533C;
+    width: 136px;
+    height: 42px;
+    border-radius: 12px;
+    border: none;
+    color: #EFEDE8;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-top: 28px;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+.btn:hover,
+.btn:focus {
+    background-color: #EF8964;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    justify-content: center;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #EFEDE8;
+    margin-bottom: 14px;
+}
+
+.titleDescription {
+    color: rgba(239, 237, 232, 0.3);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0px;
+    text-align: left;
+    margin-bottom: 28px;
+}
+
+.input {
+    padding: 0;
+    margin: 0;
+    background-color: inherit;
+    border: 1px solid rgba(239, 237, 232, 0.3);
+    color: #EFEDE8;
+    width: 93%;
+    max-width: 335px;
+    height: 46px;
+    border-radius: 12px;
+    padding-left: 14px;
+    outline: none;
+}
+.input:hover{
+    border: 1px solid var(--orange-main-color);
+}
+.input:focus{
+    border: 1px solid var(--orange-main-color);
+}
+.error{
+    border: 1px solid var(--error-color);
+}
+.success{
+    border: 1px solid var(--success-color);
+}
+.input::placeholder {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(239, 237, 232, 0.6);
+}
+.messageInput{
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.errorText{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: var(--error-color);
+}
+.successText{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: var(--success-color);
+}
+.errorSvg{
+    fill: var(--error-color);
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    margin-top: 1px;
+}
+.successSvg{
+    fill: var(--success-color);
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    margin-top: 1px;
+}
+
+.eyeIcon {
+    stroke: rgba(239, 237, 232, 1);
+    width: 20px;
+    height: 20px;
+    position: relative;
+    left: -35px;
+    bottom: -3px;
+}
+.eyeIconOff {
+    stroke: rgba(239, 237, 232, 1);
+    width: 20px;
+    height: 20px;
+    position: relative;
+    left: -35px;
+    bottom: -3px;
+}
+
+@media screen and (min-width: 768px) {
+    .loginContainer {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    .formContainer {
+        width: 100%;
+        max-width: 496px;
+        margin: 0;
+        padding-top: 140px;
+    }
+
+    .title {
+        font-size: 32px;
+        line-height: 44px;
+        margin-bottom: 16px;
+    }
+
+    .titleDescription {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 32px;
+    }
+
+    .form {
+        gap: 20px;
+    }
+
+    .input {
+        max-width: 364px;
+    }
+
+    .btn {
+        margin-top: 64px;
+        margin-bottom: 12px;
+        font-size: 20px;
+        line-height: 24px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .loginContainer {
+        padding: 0;
+        padding-left: 96px;
+    }
+
+    .formContainer {
+        width: 100%;
+        max-width: 496px;
+        margin: 0;
+        padding-top: 151px;
+    }
+
+    .title {
+        font-size: 32px;
+        line-height: 44px;
+        margin-bottom: 16px;
+    }
+
+    .titleDescription {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 32px;
+    }
+
+    .form {
+        gap: 20px;
+    }
+
+    .input {
+        max-width: 364px;
+    }
+
+    .btn {
+        margin-top: 64px;
+        margin-bottom: 12px;
+        font-size: 20px;
+        line-height: 24px;
+    }
+}

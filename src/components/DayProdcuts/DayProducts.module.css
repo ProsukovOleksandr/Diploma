@@ -1,0 +1,241 @@
+.productsContainer {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #efede833;
+  border-radius: 12px;
+  background: linear-gradient(
+      0deg,
+      rgba(239, 237, 232, 0.053),
+      rgba(239, 237, 232, 0.052)
+    ),
+    linear-gradient(0deg, rgba(239, 237, 232, 0.046), rgba(239, 237, 232, 0.05));
+  padding: 16px;
+  margin-bottom: 40px;
+  min-height: 250px;
+  max-height: 234px;
+  overflow: auto;
+}
+.productsTopBar {
+  width: 100% - 16px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.Link {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 8px;
+  fill: #e6533c;
+  color: #e6533c;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+.productsBottomBar {
+  width: 100% - 38px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 18px;
+  color: #efede8;
+}
+.productsTitle {
+  font-size: 14px;
+  line-height: 18px;
+  color: #efede843;
+}
+.noProductsText {
+  width: 121px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #efede83a;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+.adaptiveTitlesList {
+  display: none;
+}
+.productsList {
+  display: flex;
+  flex-direction: column;
+  margin-top: 22px;
+  width: inherit;
+}
+.productData {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.productListLarge {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 16px;
+}
+.productListLarge > span {
+  height: 38px;
+  padding-top: 10px;
+  padding-left: 8px;
+  border: 1px solid #efede84d;
+  border-radius: 12px;
+  overflow-y: auto;
+}
+.productListLarge > p {
+  color: #ef8964;
+}
+.productListSmallProperties {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+.productListSmall {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.productListSmall > span {
+  display: flex;
+  gap: 8px;
+  padding-top: 10px;
+  padding-left: 14px;
+  height: 38px;
+  border: 1px solid #efede84d;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.productListSmall > p {
+  color: #ef8964;
+}
+.deleteProductButton {
+  cursor: pointer;
+  position: relative;
+  top: 9px;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+.deleteProductButtonIcon {
+  width: 20px;
+  height: 20px;
+  stroke: #ef8964;
+  fill: none;
+}
+.errorMessage {
+  position: relative;
+  top: 50%;
+  font-size: 14px;
+  line-height: 18px;
+  color: #efede83a;
+  margin: 0 auto;
+}
+@media screen and (min-width: 375px) {
+  .productsContainer {
+    width: 336px;
+  }
+  .productListLarge {
+    width: 297px;
+  }
+  .productListSmall > span {
+    width: 81px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .productsContainer {
+    width: 704px;
+    height: 234px;
+    margin-bottom: 32px;
+  }
+  .productsBottomBar {
+    display: block;
+  }
+
+  .productsList {
+    margin-top: 0;
+  }
+  .productListLarge {
+    margin-right: 8px;
+    width: 204px;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 8px;
+  }
+  .productListLarge:nth-child(2) {
+    width: 128px;
+  }
+  .productListLarge > p {
+    display: none;
+  }
+  .productListSmallProperties {
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .productListSmall > p {
+    display: none;
+  }
+
+  .adaptiveTitlesList {
+    display: flex;
+    margin-top: 16px;
+    margin-bottom: 8px;
+  }
+  .adaptiveTitle {
+    height: 18px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #ef8964;
+  }
+  .adaptiveTitle:nth-child(1) {
+    width: 24px;
+    margin-right: 188px;
+  }
+  .adaptiveTitle:nth-child(2) {
+    margin-right: 87px;
+  }
+  .adaptiveTitle:nth-child(3) {
+    margin-right: 50px;
+  }
+  .adaptiveTitle:nth-child(4) {
+    margin-right: 50px;
+  }
+  .productListItem {
+    display: flex;
+    flex-direction: row;
+  }
+  .deleteProductButton {
+    position: static;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .productsContainer {
+    width: 826px;
+    height: 234px;
+  }
+  .productListLarge {
+    width: 212px;
+  }
+  .productListLarge:nth-child(2) {
+    width: 166px;
+  }
+  .productListSmall > span {
+    width: 105px;
+  }
+  .adaptiveTitle:nth-child(1) {
+    margin-right: 196px;
+  }
+  .adaptiveTitle:nth-child(2) {
+    margin-right: 125px;
+  }
+  .adaptiveTitle:nth-child(3) {
+    margin-right: 69px;
+  }
+  .adaptiveTitle:nth-child(4) {
+    margin-right: 75px;
+  }
+  .productsBottomBar {
+    padding-left: 16px;
+  }
+}

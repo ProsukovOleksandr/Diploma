@@ -1,0 +1,208 @@
+.cardContainer {
+  padding: 16px;
+
+  width: 303px;
+  height: auto;
+
+  border-radius: 12px;
+  border: 1px solid rgba(239, 237, 232, 0.2);
+  background: rgba(239, 237, 232, 0.05);
+
+  z-index: 10;
+
+  @media screen and (max-width: 767px) {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 373px;
+    margin-bottom: 0;
+  }
+}
+
+.cardHeadContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 41px;
+}
+
+.cardCategoryName {
+  padding: 5px 7.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 41px;
+  height: 24px;
+
+  text-transform: uppercase;
+
+  border-radius: 4px;
+  background: rgba(239, 237, 232, 0.05);
+}
+
+.addProductBtn {
+  display: block;
+  border: none;
+  outline: none;
+
+  margin-left: 16px;
+  padding: 0;
+
+  position: relative;
+  font-family: Roboto-400;
+  font-size: 14px;
+  align-items: center;
+
+  width: 49px;
+  height: 18px;
+
+  color: var(--orange-main-color);
+  text-align: left;
+  line-height: 1.29;
+
+  background-color: transparent;
+
+  cursor: pointer;
+}
+
+.addBtnIcon {
+  position: absolute;
+  margin-left: 8px;
+  stroke: currentColor;
+  cursor: pointer;
+}
+
+.recommendWrapper {
+  display: flex;
+  margin-left: auto;
+}
+
+.labelRecommend {
+  margin-right: 8px;
+
+  display: block;
+  width: 14px;
+  height: 14px;
+
+  background-color: #419b09;
+  border-radius: 10px;
+}
+
+.labelNotRecommended {
+  margin-right: 8px;
+
+  display: block;
+  width: 14px;
+  height: 14px;
+
+  background-color: var(--variant-error-color);
+  border-radius: 10px;
+}
+
+.recommendText {
+  color: EFEDE8;
+}
+
+.singleCardTitle {
+  width: 258px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  font-family: Roboto-400;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.cardRunningIcon {
+  margin-right: 16px;
+  fill: currentColor;
+}
+
+.cardHeaderWrapper {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.cardProductStats {
+  display: flex;
+}
+
+.cardProdStatItem {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  font-family: Roboto-400;
+  font-size: 12px;
+  line-height: 1.5;
+
+  &:not(:last-child) {
+    margin-right: 16px;
+  }
+}
+
+.cardProdStatItemText {
+  color: rgba(239, 237, 232, 0.4);
+}
+
+.warning {
+  margin-top: 64px;
+  width: 335px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 132px;
+    width: 580px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-top: 136px;
+  }
+}
+
+.highlightedText {
+  font-family: Roboto-400;
+  font-size: 14px;
+  color: var(--orange-main-color);
+  line-height: 1.29;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+.notFoundText {
+  margin-bottom: 16px;
+  font-family: Roboto-400;
+  font-size: 14px;
+  color: rgba(239, 237, 232, 0.3);
+  line-height: 1.29;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+.productItem {
+  @media screen and (max-width: 767px) {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    &:not(:nth-last-child(-n + 2)) {
+      margin-bottom: 16px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    height: 149px;
+  }
+}
