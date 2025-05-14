@@ -13,7 +13,7 @@ const ProfilePage = () => {
 
   return (
     <div className={css.container}>
-      <h2 className={css.title}>Profile Settings</h2>
+      <h2 className={css.title}>Налаштування профілю</h2>
       <div className={css.wrapper_content}>
         <div>
           <UserCard />
