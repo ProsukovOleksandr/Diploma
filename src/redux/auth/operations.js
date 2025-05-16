@@ -74,6 +74,7 @@ export const updateUserParams = createAsyncThunk(
     try {
       setAuthHeader(persistedToken);
       const res = await axios.patch('/users/update', params);
+       console.log(res.data.user)
       return res.data.user;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -110,6 +111,7 @@ export const getUserParams = createAsyncThunk(
     try {
       setAuthHeader(persistedToken);
       const res = await axios.get('/users/current');
+      console.log(res.data)
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

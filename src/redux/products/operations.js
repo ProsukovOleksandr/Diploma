@@ -37,6 +37,7 @@ const fetchProductsCategories = createAsyncThunk(
     try {
       /*setAuthHeader(storedToken);*/
       const res = await axios.get('/products/categories');
+           
       return res.data.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
