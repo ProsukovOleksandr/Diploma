@@ -3,16 +3,15 @@
   margin-right: 16px;
   width: 146px;
   height: auto;
-
+color: black;
   border-radius: 12px;
-  border: 1px solid rgba(239, 237, 232, 0.3);
+  border: 1px solid rgba(46, 45, 44, 0.3);
 
   @media screen and (min-width: 768px) {
     width: 192px;
     font-size: 16px;
   }
 }
-
 .dropBtnDown {
   display: block;
   border: none;
@@ -23,7 +22,7 @@
 
   cursor: pointer;
 
-  color: var(--white-color);
+  color: black;
   font-size: 14px;
   text-align: left;
   text-transform: capitalize;
@@ -106,7 +105,7 @@
   font-family: Roboto-400;
 
   border-radius: 12px;
-  border: 1px solid rgba(239, 237, 232, 0.3);
+  border: 1px solid rgba(29, 29, 28, 0.3);
 
   @media screen and (min-width: 768px) {
     width: 204px;
@@ -124,7 +123,7 @@
 
   cursor: pointer;
 
-  color: var(--white-color);
+  color: black;
   font-family: Roboto-400;
   font-size: 14px;
   text-align: left;

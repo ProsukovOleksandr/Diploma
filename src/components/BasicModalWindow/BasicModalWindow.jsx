@@ -104,10 +104,10 @@ const BasicModalWindow = ({ onCloseModal }) => {
                   />
                 </Form>
               </Formik>
-              <span className={style.weightLabel}>grams</span>
+              <span className={style.weightLabel}>грамми</span>
             </div>
             <p className={style.caloriesCount}>
-              Calories:
+              Калорії:
               <span className={style.kcalNumber}>
                 {' '}
                 {consumedCalories ? consumedCalories : 0}
@@ -119,14 +119,14 @@ const BasicModalWindow = ({ onCloseModal }) => {
                 className={style.addDiaryBtn}
                 onClick={handleProductAdd}
               >
-                Add to diary
+                Додати в щоденнник
               </button>
               <button
                 type="button"
                 className={style.cancelAddBtn}
                 onClick={onCloseModal}
               >
-                Cancel
+                Відміна
               </button>
             </div>
           </div>

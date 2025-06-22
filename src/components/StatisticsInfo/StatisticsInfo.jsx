@@ -3,7 +3,7 @@ import sprite from '../../images/svg/sprite.svg';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-axios.defaults.baseURL = 'https://powerpulse-backend.onrender.com';
+axios.defaults.baseURL = 'http://localhost:3000';
 
 const StatisticInfo = () => {
   const [calories, setCalories] = useState(null);
@@ -31,7 +31,7 @@ const StatisticInfo = () => {
         </svg>
         <div className={css.wrap_text}>
           <p className={css.num}>{videos !== null ? videos : '350+'}</p>
-          <p>Video tutorial</p>
+          <p>Відеоурок</p>
         </div>
       </div>
 
@@ -41,7 +41,7 @@ const StatisticInfo = () => {
         </svg>
         <div className={css.wrap_text2}>
           <p className={css.num_cal}>{calories !== null ? calories : '500'}</p>
-          <p className={css.cal}>cal</p>
+          <p className={css.cal}>калорії</p>
         </div>
       </div>
     </div>

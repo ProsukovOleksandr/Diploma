@@ -9,8 +9,8 @@ import productsSelectors from 'redux/products/selectors';
 const DropDownSelectors = ({ onCategoryFilterSelect, onTypeSelect }) => {
   const [isCategoryListOpen, setCategoryIsListOpen] = useState(false);
   const [isTypeListOpen, setTypeListOpen] = useState(false);
-  const [type, setType] = useState('All');
-  const [categoryRender, setCategoryRender] = useState('Categories');
+  const [type, setType] = useState('Все');
+  const [categoryRender, setCategoryRender] = useState('Категорії');
 
   useEffect(() => {
     const handleKeyDown = e => {
@@ -51,7 +51,7 @@ const DropDownSelectors = ({ onCategoryFilterSelect, onTypeSelect }) => {
     onCategoryFilterSelect(selectedCategory);
 
     if (selectedCategory === 'all') {
-      setCategoryRender('Categories');
+      setCategoryRender('Категорії');
     }
     setCategoryRender(selectedCategory);
 
@@ -70,13 +70,13 @@ const DropDownSelectors = ({ onCategoryFilterSelect, onTypeSelect }) => {
   const handleType = selectedType => {
     switch (selectedType) {
       case 'all':
-        setType('All');
+        setType('Все');
         break;
-      case 'recommended':
-        setType('Recommended');
+      case 'рекомендовано':
+        setType('Рекомендовано');
         break;
-      case 'not-recommended':
-        setType('Not recommended');
+      case 'не рекомендовано':
+        setType('Не рекомендовано');
         break;
       default:
     }
@@ -105,7 +105,7 @@ const DropDownSelectors = ({ onCategoryFilterSelect, onTypeSelect }) => {
                 data-category={'all'}
                 onClick={onCategorySelect}
               >
-                All categories
+                Всі категоріі
               </button>
             </li>
             {categories.map(category => {
@@ -147,7 +147,7 @@ const DropDownSelectors = ({ onCategoryFilterSelect, onTypeSelect }) => {
                 onClick={onTypeSelection}
                 data-type="all"
               >
-                All
+                Все
               </button>
             </li>
             <li key={nanoid(5)} className={style.typeItem}>
@@ -157,7 +157,7 @@ const DropDownSelectors = ({ onCategoryFilterSelect, onTypeSelect }) => {
                 onClick={onTypeSelection}
                 data-type="recommended"
               >
-                Recommended
+                Рекомендовані
               </button>
             </li>
             <li key={nanoid(5)} className={style.typeItem}>
@@ -167,7 +167,7 @@ const DropDownSelectors = ({ onCategoryFilterSelect, onTypeSelect }) => {
                 onClick={onTypeSelection}
                 data-type="not-recommended"
               >
-                Not recommended
+                Не рекомендовані
               </button>
             </li>
           </ul>

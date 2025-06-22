@@ -21,13 +21,16 @@
   .btns1 {
     display: flex;
     gap: 13px;
+    background: rgb(rgb(48, 45, 45))
   }
   .btns2 {
     display: flex;
     gap: 13px;
+    background: rgb(rgb(48, 45, 45))
   }
   .diary_item_red {
     background: #E6533C;
+    color:  white;
   }
   
 

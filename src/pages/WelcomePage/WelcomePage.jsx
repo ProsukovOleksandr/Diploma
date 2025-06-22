@@ -11,11 +11,11 @@ const WelcomePage = () => {
       <div className={css.wrapper}>
         <div className={css.item}>
           <img src={line} alt="Line" className={css.line}/>
-          <h1 className={css.title}>Transforming your body shape with Power Pulse</h1>
+          <h1 className={css.title}>Зміни свое тіло з Power Pulse</h1>
         </div>
         <nav className={css.nav}>
-            <NavLink to='/signup' className={css.btn}>Sign Up</NavLink>
-            <NavLink to='/signin' className={css.btn}>Sign In</NavLink>
+            <NavLink to='/signup' className={css.btn}>Зареєструватися</NavLink>
+            <NavLink to='/signin' className={css.btn}>Увійти</NavLink>
         </nav>
       </div>
       <StatisticInfo/>

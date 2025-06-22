@@ -26,23 +26,27 @@ const ExercisesSubcategoriesList = ({ subcategory }) => {
 
   useEffect(() => {
     const screenWidth = window.innerWidth;
-    if (screenWidth <= 768) {
-      itemsPerPage.current = 9;
-    } else if (screenWidth <= 480) {
-      itemsPerPage.current = 10;
-    }
+  if (screenWidth <= 480) {
+    itemsPerPage.current = 10;
+  } else if (screenWidth <= 768) {
+    itemsPerPage.current = 9;
+  }
 
-    const filteredExercises = filters.filter(
-      item => item.filter === subcategory
-    );
-    if (filteredExercises) {
-      setLoading(false);
-    }
-    if (!filteredExercises) {
-      setLoading(true);
-    }
+  const filteredExercises = filters.filter(
+    item => item.filter === subcategory
+  );
+  if (filteredExercises.length > 0) {
+  setExercises(filteredExercises);
+  setLoading(false);
+} else {
+  setExercises([]);
+  setLoading(true);
+}
     setExercises(filteredExercises);
   }, [subcategory, filters]);
+
+
+
 
   function transformString(inputString) {
     return inputString.toLowerCase();
@@ -52,23 +56,28 @@ const ExercisesSubcategoriesList = ({ subcategory }) => {
     const { name } = exercise;
     const newName = transformString(name);
 
-    if (subcategory === 'Body parts') {
+    if (subcategory === 'Частини тіла') {
       dispatch(fetchleBodyPartExercise(newName));
     }
-    if (subcategory === 'Muscles') {
+    if (subcategory === "М'язи") {
       dispatch(fetchleMusculesExercise(newName));
     }
-    if (subcategory === 'Equipment') {
+    if (subcategory === 'Обладнання') {
       dispatch(fetchleEquipmentExercise(newName));
     }
 
     dispatch(setExerciseTitle(name));
-    setSelectedExercises(selectedExercisesData);
   };
+
+useEffect(() => {
+  if (selectedExercisesData && selectedExercisesData.length > 0) {
+    setSelectedExercises(selectedExercisesData);
+  }
+}, [selectedExercisesData]);
 
   const handleBack = () => {
     setSelectedExercises(null);
-    dispatch(setExerciseTitle('Exercise'));
+    dispatch(setExerciseTitle('Вправа'));
   };
 
   const pagesVisited = pageNumber * itemsPerPage.current;
@@ -76,7 +85,6 @@ const ExercisesSubcategoriesList = ({ subcategory }) => {
     pagesVisited,
     pagesVisited + itemsPerPage.current
   );
-
   const pageCount = Math.ceil(exercises.length / itemsPerPage.current);
 
   const changePage = ({ selected }) => {
@@ -90,7 +98,7 @@ const ExercisesSubcategoriesList = ({ subcategory }) => {
           <svg className={styles['arrow-svg']}>
             <use href={sprite + '#icon-back-arrow'}></use>
           </svg>
-          <div className={styles['icon-back-arrow']}>back</div>
+          <div className={styles['icon-back-arrow']}>назад</div>
         </button>
       )}
       {loading ? (

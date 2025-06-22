@@ -21,14 +21,14 @@ const ProfilePage = () => {
             <Daily
               color="var(--orange-main-color)"
               iconId="fluent_food_icon"
-              text="Daily calorie intake"
+              text="Добова норма споживання калорій"
               value={Math.round(user.bmr) || 0}
             />
             <Daily
               color="var(--orange-main-color)"
               iconId="dumbbell_icon"
-              text="Daily norm of sports"
-              value="110 min"
+              text="Денна норма спорту"
+              value="110 хв"
             />
           </div>
           <ExclamationMark />

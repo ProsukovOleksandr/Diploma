@@ -18,9 +18,9 @@
   text-align: center;
   padding: 0;
   border-radius: 12px;
-  border: 1px solid rgba(239, 237, 232, 0.2);
-  color: rgba(239, 237, 232, 0.4);
-  background: #10100f;
+  border: 1px solid rgba(34, 34, 33, 0.2);
+  color: rgba(0, 0, 0, 0.4);
+  background: #ecece7;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -37,7 +37,7 @@
   width: 270px;
   height: 226px;
   border-radius: 12px;
-  border: 1px solid rgba(239, 237, 232, 0.2);
+  border: 1px solid rgba(80, 79, 78, 0.2);
 }
 .info {
   width: 100%;
@@ -58,12 +58,12 @@
   align-items: flex-start;
   padding: 12px;
   border-radius: 12px;
-  border: 1px solid rgba(239, 237, 232, 0.2);
-  background: rgba(239, 237, 232, 0.05);
+  border: 1px solid rgba(20, 20, 20, 0.2);
+  background: rgba(15, 15, 15, 0.05);
   overflow: hidden;
 }
 .tip {
-  color: rgba(239, 237, 232, 0.4);
+  color: rgba(24, 24, 23, 0.4);
   font-feature-settings: 'clig' off, 'liga' off;
   font-size: 12px;
   font-style: normal;
@@ -71,7 +71,7 @@
   line-height: 16px;
 }
 .text {
-  color: #efede8;
+  color: #504b4b;
   font-feature-settings: 'clig' off, 'liga' off;
   font-size: 14px;
   font-style: normal;
@@ -86,7 +86,7 @@
   margin-top: 10px;
 }
 .coment {
-  color: rgba(239, 237, 232, 0.3);
+  color: rgba(68, 65, 65, 0.3);
   font-family: Roboto-400;
   font-size: 14px;
   font-style: normal;
@@ -136,7 +136,7 @@
   cursor: pointer;
 }
 .time {
-  color: rgba(239, 237, 232, 0.4);
+  color: rgba(73, 73, 72, 0.959);
   font-feature-settings: 'clig' off, 'liga' off;
   font-family: Roboto-400;
   font-size: 10px;
@@ -153,8 +153,13 @@
   z-index: 11;
   top: 16px;
   right: 16px;
-  background-color: transparent;
+  background-color: #ef8964;
   border: none;
+  border-radius: 50%;
+  width: 31px;
+  height: 31px;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   transition: all 250ms linear;
 }
@@ -170,7 +175,6 @@
 .closeIcon {
   width: 24px;
   height: 24px;
-  fill: white;
 }
 
 .welDoneWindow {
@@ -181,8 +185,8 @@
   width: 335px;
   height: 384px;
   border-radius: 12px;
-  border: 1px solid rgba(239, 237, 232, 0.2);
-  background: #10100f;
+  border: 1px solid rgba(63, 62, 61, 0.2);
+  background: #d3d3cb;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -190,7 +194,7 @@
   gap: 14px;
 }
 .title {
-  color: #efede8;
+  color: #383836;
   font-family: Roboto-700;
   font-size: 24px;
   font-style: normal;
@@ -205,7 +209,7 @@
   gap: 12px;
 }
 .doneTip {
-  color: rgba(239, 237, 232, 0.3);
+  color: rgba(53, 52, 51, 0.3);
   font-family: Roboto-400;
   font-size: 14px;
   font-style: normal;
@@ -237,7 +241,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgba(239, 237, 232, 0.3);
+  color: rgba(14, 13, 13, 0.3);
   font-family: Roboto-400;
   font-size: 14px;
   font-style: normal;
@@ -247,8 +251,8 @@
 .linkArrow {
   width: 16px;
   height: 16px;
-  fill: #efede84d;
-  stroke: #efede84d;
+  fill: rgba(14, 13, 13, 0.3);
+  stroke: rgba(14, 13, 13, 0.3);
 }
 
 @media screen and (min-width: 768px) {

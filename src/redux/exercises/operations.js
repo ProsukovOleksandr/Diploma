@@ -15,7 +15,7 @@ export const fetchFilters = createAsyncThunk(
 
       setAuthHeader(storedToken);
       const response = await axios.get('/exercises/filters');
-     console.log(response.data)
+
       return response.data;
     } catch (e) {
       toast.error('Some error occured. Please try again later');
@@ -30,10 +30,9 @@ export const fetchleBodyPartExercise = createAsyncThunk(
     try {
       const state = thunkAPI.getState();
       const storedToken = state.auth.token;
-
       setAuthHeader(storedToken);
       const response = await axios.get(`/exercises/bodyParts/${name}`);
-       console.log(response.data)
+console.log(response.data)
       return response.data;
     } catch (e) {
       toast.error('Some error occured. Please try again later');
@@ -50,7 +49,7 @@ export const fetchleMusculesExercise = createAsyncThunk(
 
       setAuthHeader(storedToken);
       const response = await axios.get(`/exercises/muscules/${name}`);
-      console.log(response.data)
+
       return response.data;
     } catch (e) {
       toast.error('Some error occured. Please try again later');
@@ -66,8 +65,7 @@ export const fetchleEquipmentExercise = createAsyncThunk(
       const storedToken = state.auth.token;
 
       setAuthHeader(storedToken);
-      const response = await axios.get(`/exercises/equipment/${name}`);
-      console.log(response.data)
+      const response = await axios.get(`/exercises/equipments/${name}`);
       return response.data;
     } catch (e) {
       toast.error('Some error occured. Please try again later');

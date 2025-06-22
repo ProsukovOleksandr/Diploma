@@ -6,7 +6,7 @@ import { updateUserParams, addUserData } from 'redux/auth/operations';
 import RadioOption from './RadioOption';
 import css from './UserForm.module.css';
 // import { setFullinfo } from 'redux/auth/authSlice';
-
+import { format } from 'date-fns';
 const UserForm = () => {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
@@ -40,12 +40,12 @@ const UserForm = () => {
     {
       id: 'Male',
       value: 'male',
-      label: 'Male',
+      label: 'Чоловік',
     },
     {
       id: 'Female',
       value: 'female',
-      label: 'Female',
+      label: 'Жінка',
     },
   ];
 
@@ -53,28 +53,28 @@ const UserForm = () => {
     {
       id: 'level-1',
       value: 1,
-      label: 'Sedentary lifestyle (little or no physical activity)',
+      label: 'Сидячий спосіб життя (мала фізична активність або відсутність)',
     },
     {
       id: 'level-2',
       value: 2,
-      label: 'Light activity (light exercises/sports 1-3 days per week)',
+      label: 'Легка активність (легкі вправи/спорт 1-3 дні на тиждень)',
     },
     {
       id: 'level-3',
       value: 3,
-      label: 'Moderately active (moderate exercises/sports 3-5 days per week)',
+      label: 'Помірно активний (помірні вправи/спорт 3-5 днів на тиждень)',
     },
     {
       id: 'level-4',
       value: 4,
-      label: 'Very active (intense exercises/sports 6-7 days per week)',
+      label: 'Дуже активний (інтенсивні вправи/спорт 6-7 днів на тиждень)',
     },
     {
       id: 'level-5',
       value: 5,
       label:
-        'Extremely active (very strenuous exercises/sports and physical work)',
+        'Надзвичайно активний (дуже виснажливі вправи/спорт і фізична робота)',
     },
   ];
 
@@ -86,25 +86,26 @@ const UserForm = () => {
     blood: (user.blood ?? '1') || '1',
     sex: user.sex || 'male',
     levelActivity: (user.levelActivity ?? '1') || '1',
+    birthday: user.birthday ? format(new Date(user.birthday), 'yyyy-MM-dd') : '',
   };
 
   const validationSchema = Yup.object({
-    name: Yup.string().required('Name is required'),
+    name: Yup.string().required("Ім'я обов'язкове"),
     height: Yup.number()
-      .positive('Height must me positive')
-      .required('Height is requeired'),
+      .positive('Зріст повинен бути додатній')
+      .required("Зріст обов'язковий"),
     currentWeight: Yup.number()
-      .positive('Weight must be positive')
-      .required('Current weight is required'),
+      .positive('Вага має бути додатньою')
+      .required("Поточна вага обов'язкова"),
     desiredWeight: Yup.number()
-      .positive('Weight must be positive')
-      .required('Desired weight is required'),
+      .positive('Вага має бути додатньою')
+      .required("Бажана вага обов'язкова"),
   });
 
   const handleSumbit = values => {
     const { name, height, currentWeight, desiredWeight, ...sendData } = values;
     sendData.name = name;
-    sendData.birthday = '1990-01-01';
+    sendData.birthday = values.birthday;
     sendData.height = height;
     sendData.currentWeight = currentWeight;
     sendData.desiredWeight = desiredWeight;
@@ -115,7 +116,6 @@ const UserForm = () => {
     dispatch(updateUserParams(sendData))
   };
 };
-
   return (
     <Formik
       initialValues={initialValues}
@@ -126,7 +126,7 @@ const UserForm = () => {
         <Form>
           <div className={css.form_container}>
             <div>
-              <p className={css.section_title}>Basic info</p>
+              <p className={css.section_title}>Базова інформація</p>
               <input
                 className={css.input}
                 name="name"
@@ -134,7 +134,7 @@ const UserForm = () => {
                 autocomplete = "off"
                 placeholder={user.name}
                 value={formik.values.name}
-                style={{ color: 'rgba(239, 237, 232, 0.60)' }}
+                style={{ color: 'rgba(51, 50, 49, 0.6)' }}
                 onChange={formik.handleChange}
               />
             </div>
@@ -145,7 +145,7 @@ const UserForm = () => {
                 name="email"
                 placeholder="Email"
                 defaultValue={user.email}
-                style={{ color: 'rgba(239, 237, 232, 0.60)' }}
+                style={{ color: 'rgba(51, 50, 49, 0.6)' }}
                 readOnly
                 disabled
               />
@@ -154,7 +154,7 @@ const UserForm = () => {
           <div className={css.wrapper_input_field}>
             <div className={css.wrapper_input_section}>
               <div className={css.wrapper_input}>
-                <p className={css.section_title}>Height</p>
+                <p className={css.section_title}>Зріст</p>
                 <input
                   className={css.input_field}
                   type="number"
@@ -166,7 +166,7 @@ const UserForm = () => {
                 />
               </div>
               <div className={css.wrapper_input}>
-                <p className={css.section_title}>Current Weight</p>
+                <p className={css.section_title}>Поточна вага</p>
                 <input
                   className={css.input_field}
                   type="number"
@@ -180,7 +180,7 @@ const UserForm = () => {
             </div>
             <div className={css.wrapper_input_section}>
               <div className={css.wrapper_input}>
-                  <p className={css.section_title}>Desired Weight</p>
+                  <p className={css.section_title}>Бажана вага</p>
                   <input
                     type="number"
                     className={css.input_field}
@@ -192,14 +192,15 @@ const UserForm = () => {
                   />
                   </div>
               <div className={css.wrapper_input}>
-                <p className={css.section_title}>0</p>
+                <p className={css.section_title}>Дата народження</p>
                   <input
                     type="date"
                     className={css.input_field}
-                    name="desiredWeight"
-                    id="desiredWeight"
+                    name="birthday"
+                    id="birthday"
                     placeholder="0"
-                    // value={user.desiredWeight}
+                    value={formik.values.birthday}
+                    onChange={formik.handleChange}
                   />
                 </div>
             </div>
@@ -207,7 +208,7 @@ const UserForm = () => {
           <div className={css.wrapper_radio}>
             <div className={css.wrapper_radio_section}>
                 <div className={css.wrapper_radio_section_container_left}>
-                  <p className={css.section_title}>Blood</p>
+                  <p className={css.section_title}>Группа крові</p>
                   <div className={css.wrapper_radio_section_blood}>
                     {bloodOptions.map(option => (
                       <RadioOption
@@ -251,7 +252,7 @@ const UserForm = () => {
             </div>
           </div>
           <button className={css.button} type="submit">
-            Save
+            Зберегти
           </button>
         </Form>
       )}

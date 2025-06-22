@@ -8,7 +8,10 @@ import { RestrictedRoute } from 'RestrictedRoute';
 import { PrivateRoute } from 'PrivateRoute';
 import ExerciseModal from 'components/ExercisesTable/ExercisesTable';
 import { Toaster } from 'react-hot-toast';
-
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { refreshUser } from 'redux/auth/operations';
+import axios from 'axios';
 const WelcomePage = lazy(() => import('pages/WelcomePage/WelcomePage'));
 const SignUpPage = lazy(() => import('pages/SignUpPage/SignUpPage'));
 const SignInPage = lazy(() => import('pages/SignInPage/SignInPage'));
@@ -20,11 +23,22 @@ const ErrorPage = lazy(() => import('pages/ErrorPage/ErrorPage'));
 
 // const RestrictedRoute = lazy(() => import('../src/RestrictedRoute'));
 // const PrivateRoute = lazy(() => import('../src/PrivateRoute'));
-
 function App() {
   
   // const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
+  
+const dispatch = useDispatch();
+const setAuthHeader = token => {
+  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+};
 
+useEffect(() => {
+  const token = localStorage.getItem('token');
+  if (token) {
+    setAuthHeader(token);
+    dispatch(refreshUser()); // Якщо треба оновити дані
+  }
+}, [dispatch]);
   return (
     <>
       <Suspense

@@ -19,7 +19,7 @@ const UserCard = () => {
     <div className={css.main_wrapper}>
       <div className={css.wrap_avatar}>
         {user.avatarUrl ? 
-          <img src={user.avatarUrl} alt="Avatar" className={css.avatar}/>: 
+          <img src={user.avatarUrl} alt="Аватар" className={css.avatar}/>: 
           <svg className={css.avatar_svg}>
             <use href={sprite + '#avatar_icon'}></use>
           </svg>
@@ -41,8 +41,8 @@ const UserCard = () => {
           </div>
         </label>
       </form>
-      <p className={css.title_name}>{user.name ? user.name : 'User'}</p>
-      <p className={css.subtitle}>User</p>
+      <p className={css.title_name}>{user.name ? user.name : 'Користувач'}</p>
+      <p className={css.subtitle}>Користувач</p>
     </div>
   );
 };

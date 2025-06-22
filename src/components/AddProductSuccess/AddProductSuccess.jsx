@@ -24,9 +24,9 @@ const AddProductSuccess = ({
         </button>
         <div className={style.successData}>
           <img src={image} alt="Success" className={style.successImg} />
-          <p className={style.wellDone}>Well done</p>
+          <p className={style.wellDone}>Гарна робота!</p>
           <p className={style.kcal}>
-            Calories:{' '}
+            Калорії:{' '}
             <span className={style.kcalNumber}>{consumedCalories}</span>
           </p>
           <button
@@ -34,11 +34,11 @@ const AddProductSuccess = ({
             className={style.nextBtn}
             onClick={onCloseModal}
           >
-            Next product
+            Наступний продукт
           </button>
           <div className={style.linkWrapper}>
             <Link to="/diary" className={style.link}>
-              To the diary{' '}
+              До щоденника{' '}
             </Link>
             <svg width="16" height="16">
               <use

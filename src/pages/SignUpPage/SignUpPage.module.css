@@ -6,9 +6,10 @@
     background-repeat: no-repeat;
     position: relative;
     min-height: 100vh;
-    background-color: #000000;
+    background-color: white;
     margin: 0;
     width: 100%;
+    padding-right: 500px;
 }
 @media (min-resolution: 192dpi) {
     @media (min-resolution: 192dpi) {
@@ -22,6 +23,7 @@
         background-image: url('../../images/tablet_images/hero-tablet.png');
         padding: 0;
         background-size: contain;
+        padding-right: 500px;
     }
     @media (min-resolution: 192dpi) {
         .container {
@@ -33,6 +35,7 @@
     .container {
         background-image: url('../../images/desktop_images/hero-desktop.png');
         padding: 0;
+        padding-right: 1000px;
     }
     @media (min-resolution: 192dpi) {
         .container {

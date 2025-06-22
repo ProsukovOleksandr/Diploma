@@ -31,8 +31,8 @@ const SignUpForm = () => {
     return(
         <div className={style.wrapper}>
             <div className={style.formContainer}>
-                <h1 className={style.title}>Sign Up</h1>
-                <p className={style.titleDescription}>Thank you for your interest in our platform. To complete the registration process, please provide us with the following information.</p>
+                <h1 className={style.title}>Зареєструватись</h1>
+                <p className={style.titleDescription}>Дякуємо за інтерес до нашої платформи. Щоб завершити процес реєстрації, надайте нам наступну інформацію.</p>
                 <Formik
                     initialValues={{
                         name: '',
@@ -82,7 +82,7 @@ const SignUpForm = () => {
                                         <svg className={style.successSvg}>
                                             <use href={sprite + '#icon-checkbox-circle-fill'}></use>
                                         </svg>
-                                        <p className={style.successText}>Success email</p>
+                                        <p className={style.successText}>Правильний e-mail</p>
                                     </div>
                                 )}
                             </label>
@@ -110,7 +110,7 @@ const SignUpForm = () => {
                                         <svg className={style.successSvg}>
                                             <use href={sprite + '#icon-checkbox-circle-fill'}></use>
                                         </svg>
-                                        <p className={style.successText}>Success password</p>
+                                        <p className={style.successText}>Правильний пароль</p>
                                     </div>
                                 )}
                                 {!showPassword && <svg
@@ -126,12 +126,12 @@ const SignUpForm = () => {
                                     <use href={sprite + '#icon-eye-off'}></use>
                                 </svg>}
                             </label>
-                            <button type='submit' className={style.btn}>Sign Up</button>
+                            <button type='submit' className={style.btn}>Зареєструватись</button>
                         </Form>
                     )}
                 </Formik>
-                <p className={style.description}>Already have an account?&nbsp;
-                    <NavLink to={'/signin'} className={style.link}>Sign In</NavLink>
+                <p className={style.description}>Вже маєте аккаунт?&nbsp;
+                    <NavLink to={'/signin'} className={style.link}>Вхід</NavLink>
                 </p>
             </div>
         </div>

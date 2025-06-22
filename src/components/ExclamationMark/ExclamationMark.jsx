@@ -12,8 +12,7 @@ const ExclamationMark = () => {
         </div>
 
         <p className={css.text}>
-          We understand that each individual is unique, so the entire approach
-          to diet is relative and tailored to your unique body and goals.
+          Ми розуміємо, що кожна людина унікальна, тому весь підхід до дієти є відносним і адаптованим до вашого тіла та цілей.
         </p>
       </div>
     </div>

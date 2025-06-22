@@ -46,7 +46,7 @@
   top: 14px;
   right: 24px;
 
-  color: var(--white-color);
+  color: black;
   background-color: transparent;
 
   cursor: pointer;
@@ -71,16 +71,16 @@
   height: auto;
 
   font-family: Roboto-400;
-  color: var(--white-color);
+  color: black;
   font-size: 14px;
   line-height: 1.29;
 
-  background-color: var(--black-color);
+  background-color: white;
   border-radius: 12px;
-  border: 1px solid rgba(239, 237, 232, 0.3);
+  border: 1px solid rgba(39, 39, 37, 0.3);
 
   &::placeholder {
-    color: var(--white-color);
+    color: black;
     font-size: 14px;
     opacity: 1;
     line-height: 1.29;

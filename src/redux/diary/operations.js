@@ -14,7 +14,6 @@ export const fetchFoodAndExercises = createAsyncThunk(
 
       setAuthHeader(storedToken);
       const response = await axios.get(`/diary?date=${date}`);
-      console.log(response.data)
       return response.data;
     } catch (e) {
       toast.error('Some error occured. Please try again later');

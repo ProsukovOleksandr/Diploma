@@ -16,9 +16,9 @@
   height: 362px;
   padding: 48px 89px;
 
-  background-color: #10100f;
+  background-color: #f3f3ef;
   border-radius: 12px;
-  border: 1px solid rgba(239, 237, 232, 0.2);
+  border: 1px solid rgba(12, 12, 12, 0.2);
 
   @media screen and (min-width: 768px) {
     padding: 64px 136px;
@@ -37,7 +37,7 @@
   top: 14px;
   right: 14px;
 
-  color: var(--white-color);
+  color: black;
   background-color: transparent;
 
   cursor: pointer;
@@ -90,7 +90,7 @@
 .wellDone {
   margin-bottom: 16px;
 
-  color: var(--white-color);
+  color: black;
   text-align: center;
   font-family: Roboto-700;
 
@@ -103,7 +103,7 @@
   margin-bottom: 24px;
 
   text-align: center;
-  color: rgba(239, 237, 232, 0.3);
+  color: rgba(36, 35, 34, 0.3);
   font-family: Roboto-400;
   font-size: 14px;
   line-height: 1.29;
@@ -129,7 +129,7 @@
   margin-bottom: 16px;
   padding: 12px 32px;
 
-  color: var(--white-color);
+  color: #fafafa;
   font-family: Roboto-500;
   font-size: 16px;
   font-weight: 500;
@@ -150,12 +150,12 @@
 
   cursor: pointer;
 
-  color: rgba(239, 237, 232, 0.3);
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .link {
   margin-right: 8px;
-  color: rgba(239, 237, 232, 0.3);
+  color: rgba(0, 0, 0, 0.3);
   font-family: Roboto-400;
   font-size: 14px;
 }

@@ -9,7 +9,7 @@ const LogoutBtn = ({ burger }) => {
 
   return (
     <button onClick={handleLogOut} className={css.log_out_link}>
-      Logout
+      Вийти
       <svg width="20" height="20" className={css.logout_icon + (burger ? ` ${css.iconBurger}` : '')}>
         <use href={sprite + '#log_out_icon'}></use>
       </svg>

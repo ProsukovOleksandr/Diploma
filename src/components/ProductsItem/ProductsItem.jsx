@@ -38,11 +38,11 @@ const ProductsItem = ({
     <div className={style.warning}>
       <p className={style.notFoundText}>
         <span className={style.highlightedText}>
-          Sorry, no results were found
+          На жаль, для вибраних вами фільтрів продуктів не знайдено результатів. 
         </span>{' '}
-        for the product filters you selected. You may want to consider other
-        search options to find the product you want. Our range is wide and you
-        have the opportunity to find more options that suit your needs.
+        Ви можете розглянути інші
+        параметри пошуку, щоб знайти потрібний продукт. Наш асортимент широкий і для вас
+        мати можливість знайти більше варіантів, які відповідають вашим потребам.
       </p>
       <p className={style.highlightedText}>
         Try changing the search parameters.
@@ -55,7 +55,7 @@ const ProductsItem = ({
           <li key={_id} data-id={_id} className={style.productItem}>
             <div className={style.cardContainer}>
               <div className={style.cardHeadContainer}>
-                <div className={style.cardCategoryName}>Diet</div>
+                <div className={style.cardCategoryName}>Дієта</div>
                 <div className={style.recommendWrapper}>
                   <span
                     className={
@@ -66,8 +66,8 @@ const ProductsItem = ({
                   ></span>
                   <p className={style.recommendText}>
                     {groupBloodNotAllowed[userBloodType]
-                      ? 'Recommended'
-                      : 'Not recommended'}
+                      ? 'Рекомендовано'
+                      : 'Не рекомендовано'}
                   </p>
                 </div>
                 <button
@@ -75,7 +75,7 @@ const ProductsItem = ({
                   className={style.addProductBtn}
                   onClick={onOpenModal}
                 >
-                  Add
+                  Додати
                   <svg className={style.addBtnIcon} width="16" height="16">
                     <use href={sprite + '#arrow_add_icon'}></use>
                   </svg>
@@ -89,16 +89,16 @@ const ProductsItem = ({
               </div>
               <div className={style.cardProductStats}>
                 <p className={style.cardProdStatItem}>
-                  <span className={style.cardProdStatItemText}>Calories:</span>{' '}
-                  {calories}
+                  <span className={style.cardProdStatItemText}>Калорії: {calories}</span>
+                  
                 </p>
                 <p className={style.cardProdStatItem}>
-                  <span className={style.cardProdStatItemText}>Category: </span>
-                  {category}
+                  <span className={style.cardProdStatItemText}>Категорія: {category}</span>
+                  
                 </p>
                 <p className={style.cardProdStatItem}>
-                  <span className={style.cardProdStatItemText}>Weight:</span>{' '}
-                  {weight}
+                  <span className={style.cardProdStatItemText}>Вага: {weight}</span>
+                  
                 </p>
               </div>
             </div>

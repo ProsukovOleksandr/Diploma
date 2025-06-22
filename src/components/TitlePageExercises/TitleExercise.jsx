@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from '../TitlePageExercises/TitleExercise.module.css';
-import { useSelector } from 'react-redux';
+//import { useSelector } from 'react-redux';
 
 const ExercisesPage = () => {
-  const title = useSelector(state => state.exercises.title);
-
+ // const title = useSelector(state => state.exercises.title);
+  //console.log(title)
   return (
     <div className={styles.containerTitle}>
-      <h1 className={styles.title}>{title}</h1>
+      <h1 className={styles.title}>Вправи</h1>
     </div>
   );
 };

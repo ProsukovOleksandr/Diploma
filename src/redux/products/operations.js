@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'https://powerpulse-backend.onrender.com';
+axios.defaults.baseURL = 'http://localhost:3000';
 
 /*const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -37,7 +37,7 @@ const fetchProductsCategories = createAsyncThunk(
     try {
       /*setAuthHeader(storedToken);*/
       const res = await axios.get('/products/categories');
-           
+      console.log(res.data.data)
       return res.data.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

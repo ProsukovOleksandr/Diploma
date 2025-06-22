@@ -21,7 +21,7 @@ const DayExercises = ({ doneExercises, date }) => {
     return (
       <Link to="/exercises" className={styles.linkExercises}>
         <p className={styles.btnAddExercises}>
-          Add exercise
+        Додати вправи
           <svg className={styles.arrowIcon}>
             <use href={symbolDefs + '#arrow-icon'}></use>
           </svg>
@@ -70,7 +70,7 @@ const DayExercises = ({ doneExercises, date }) => {
     <>
       <div className={styles.DayExercises}>
         <div className={styles.DayExercisesHead}>
-          <h2>Exercises</h2>
+          <h2>Вправи</h2>
           {addExercisesBtn()}
         </div>
         {isLoading ? (
@@ -96,7 +96,7 @@ const DayExercises = ({ doneExercises, date }) => {
           <>
             {(error || listOfExercises.length === 0) && (
               <div className={styles.DayExercisesTable}>
-                <p className={styles.not_found}>Not found exercises</p>
+                <p className={styles.not_found}>Вправи не знайдено</p>
               </div>
             )}
             {listOfExercises.length !== 0 && (
@@ -104,14 +104,14 @@ const DayExercises = ({ doneExercises, date }) => {
                 <table>
                   <thead>
                     <tr>
-                      <th className={styles.thBodyPart}>Body Part</th>
-                      <th className={styles.thEquipment}>Equipment</th>
-                      <th className={styles.thName}>Name</th>
-                      <th className={styles.thTarget}>Target</th>
+                      <th className={styles.thBodyPart}>Частина Тіла</th>
+                      <th className={styles.thEquipment}>Обладнання</th>
+                      <th className={styles.thName}>Назва</th>
+                      <th className={styles.thTarget}>Ціль</th>
                       <th className={styles.thBurnedCalories}>
-                        Burned Calories
+                        Спалені калорії
                       </th>
-                      <th className={styles.thTime}>Time</th>
+                      <th className={styles.thTime}>Час</th>
                       <th className={styles.thDelete}></th>
                     </tr>
                   </thead>

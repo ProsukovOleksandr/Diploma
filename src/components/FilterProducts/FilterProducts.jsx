@@ -72,7 +72,7 @@ const FilterProducts = ({ categoryFilter }) => {
         <input
           className={style.searchField}
           type="text"
-          placeholder="Search"
+          placeholder="Пошук"
           // value={filter}
           onChange={onFilterChange}
           onBlur={onFocusChange}

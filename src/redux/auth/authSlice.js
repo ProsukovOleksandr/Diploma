@@ -10,7 +10,7 @@ import {
   updateUserParams,
 } from './operations';
 import toast from 'react-hot-toast';
-
+import axios from 'axios';
 const initialState = {
   user: {
     name: null,
@@ -30,7 +30,14 @@ const initialState = {
   isRefreshing: false,
   isLoading: false,
 };
+ const setAuthHeader = token => {
+  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+};
 
+const token = localStorage.getItem('token');
+if (token) {
+  setAuthHeader(token);
+}
 const authSlice = createSlice({
   name: 'auth',
   initialState,
@@ -48,11 +55,11 @@ const authSlice = createSlice({
         state.isLoggedIn = true;
         state.goToParams = true;
         state.isLoading = false;
-        toast.success('You have successfully registered');
+        toast.success('Ви успішно зареєструвалися');
       })
       .addCase(register.rejected, (state, action) => {
         state.isLoading = false;
-        toast.error('This email is already in use. Please choose another email address to continue.');
+        toast.error('Ця електронна адреса вже використовується. Будь ласка, виберіть іншу адресу електронної пошти, щоб продовжити.');
       })
       .addCase(logIn.pending, (state, action) => {
         state.isLoading = true;
@@ -63,11 +70,11 @@ const authSlice = createSlice({
         state.refreshToken = action.payload.refreshToken;
         state.isLoggedIn = true;
         state.isLoading = false;
-        toast.loading('You have successfully logged in');
+        toast.loading('Ви успішно увійшли в систему');
       })
       .addCase(logIn.rejected, (state, action) => {
         state.isLoading = false;
-        toast.error('Unable to sign in. Please ensure your email and password are correct, and make another attempt.');
+        toast.error('Не вдається ввійти. Переконайтеся, що ваша електронна адреса та пароль правильні, і спробуйте ще раз.');
       })
       .addCase(logOut.fulfilled, state => {
         state.user = initialState.user;
@@ -94,19 +101,21 @@ const authSlice = createSlice({
       })
 
       .addCase(updateUserParams.pending, (state, action) => {
-        toast.loading("Loadind data")
+        toast.loading("Завантаження даних")
+
       })
       .addCase(updateUserParams.fulfilled, (state, action) => {
         state.user = action.payload;
         state.isLoggedIn = true;
         state.goToParams = false;
         state.isRefreshing = false;
-        toast.success('User successfully update');
+        console.log(action.payload);
+        toast.success('Користувач успішно оновився');
       })
       .addCase(updateUserParams.rejected, (state, action) => {
         state.isLoggedIn = true;
         state.goToParams = false;
-        toast.error('User update failed');
+        toast.error('Помилка оновлення користувача');
       })
 
       .addCase(getUserParams.pending, (state, action) => state)
@@ -117,30 +126,30 @@ const authSlice = createSlice({
       .addCase(getUserParams.rejected, (state, action) => state)
 
       .addCase(addUserData.pending, (state, action) => {
-        toast.loading("Loadind data")
+        toast.loading("Завантаження даних")
       })
       .addCase(addUserData.fulfilled, (state, action) => {
         state.user = action.payload;
         state.isLoggedIn = true;
         state.goToParams = false;
-        toast.success('User data successfully added');
+        toast.success('Дані користувача успішно додано');
       })
       .addCase(addUserData.rejected, (state, action) => {
         state.isLoggedIn = true;
         state.goToParams = false;
-        toast.error('Error adding data');
+        toast.error('Помилка додавання даних');
       })
       .addCase(updateAvatar.pending, (state, action) => {
-        toast.loading('Loading data');
+        toast.loading('Завантаження даних');
       })
       .addCase(updateAvatar.fulfilled, (state, action) => {
         state.user = action.payload;
         state.isLoggedIn = true;
         state.goToParams = false;
-        toast.success('Avatar successfully added');
+        toast.success('Аватар успішно додано');
       })
       .addCase(updateAvatar.rejected, (state, action) => {
-        toast.error('Error, failed to load avatar');
+        toast.error('Помилка, не вдалося завантажити аватар');
       })
 });
 

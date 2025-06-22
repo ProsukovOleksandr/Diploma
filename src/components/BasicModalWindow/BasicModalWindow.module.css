@@ -24,9 +24,9 @@
   transform: translate(-50%, -50%) scale(100%);
 
   border-radius: 12px;
-  border: 1px solid rgba(239, 237, 232, 0.2);
+  border: 1px solid rgba(15, 15, 15, 0.2);
 
-  background-color: #10100f;
+  background-color: #eeeee7;
 
   @media screen and (min-width: 768px) {
     padding: 48px 24px;
@@ -62,7 +62,7 @@
 
 .caloriesCount {
   font-family: Roboto-400;
-  color: rgba(239, 237, 232, 0.4);
+  color: rgba(0, 0, 0, 0.4);
   font-size: 12px;
 }
 
@@ -73,12 +73,12 @@
 
   font-family: Roboto-400;
   font-size: 16px;
-  color: rgba(239, 237, 232, 0.3);
+  color: rgba(0, 0, 0, 0.753);
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 
-  background-color: #10100f;
+  background-color: #eeeee6;
   border-radius: 12px;
   border: 1px solid var(--orange-main-color);
 
@@ -105,10 +105,10 @@
   text-align: left;
 
   font-family: Roboto-400;
-  color: var(--white-color);
+  color: black;
   font-size: 16px;
 
-  background-color: #10100f;
+  background-color: #d1d1c9;
   border-radius: 12px;
   border: 1px solid var(--orange-main-color);
 
@@ -134,7 +134,7 @@
   width: 273px;
 
   font-family: Roboto-400;
-  color: rgba(239, 237, 232, 0.3);
+  color: rgba(32, 32, 31, 0.3);
   font-size: 12px;
 
   @media screen and (min-width: 768px) {
@@ -159,7 +159,7 @@
   top: 14px;
   right: 14px;
 
-  color: var(--white-color);
+  color: black;
   background-color: transparent;
 
   cursor: pointer;
@@ -247,6 +247,6 @@
 }
 
 .kcalNumber {
-  color: var(--white-color);
+  color: black;
   font-size: 12px;
 }

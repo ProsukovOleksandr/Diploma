@@ -95,9 +95,9 @@ const ProductsPage = () => {
 
   return (
     <div className={style.prodContainer}>
-      {windowWidth >= 1440 && <p className={style.filtersTitle}>Filters</p>}
+      {windowWidth >= 1440 && <p className={style.filtersTitle}>Фільтри</p>}
       <div className={style.desktopCntrlWrap}>
-        <TitlePage style={style.productsTitle} title="Products" />
+        <TitlePage style={style.productsTitle} title="Продукти" />
         <div className={style.filtersCtrls}>
           <FilterProducts categoryFilter={categoryFilter} />
           <div className={style.dropDownContainer}>

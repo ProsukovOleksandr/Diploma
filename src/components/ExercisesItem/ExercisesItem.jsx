@@ -21,7 +21,7 @@ const ExercisesItem = ({ selectedExercises }) => {
         <div key={exercise._id} className={styles['exercises-item']}>
           <div className={styles['exercise-top']}>
             <div className={styles['workout-container']}>
-              <h3 className={styles['workout-title']}>WORKOUT</h3>
+              <h3 className={styles['workout-title']}>ТРЕНУВАННЯ</h3>
             </div>
             <button
               style={{ cursor: 'pointer' }}
@@ -30,7 +30,7 @@ const ExercisesItem = ({ selectedExercises }) => {
               }}
               className={styles['button-svg-container']}
             >
-              <div className={styles['start-button']}>Start</div>
+              <div className={styles['start-button']}>Почати</div>
               <svg className={styles['arrow-svg']}>
                 <use href={sprite + '#icon-arrow-right'}></use>
               </svg>
@@ -46,15 +46,15 @@ const ExercisesItem = ({ selectedExercises }) => {
           </div>
           <div className={styles['exercise-bottom']}>
             <p className={styles['data-name']}>
-              Target:{' '}
+              Ціль:{' '}
               <span className={styles['data-value']}>{exercise.target}</span>
             </p>
             <p className={styles['data-name']}>
-              Body Part:{' '}
+              Частина Тіла:{' '}
               <span className={styles['data-value']}>{exercise.bodyPart}</span>
             </p>
             <p className={styles['data-name']}>
-              Burned Calories:{' '}
+              Спалені Калорії:{' '}
               <span className={styles['data-value']}>
                 {exercise.burnedCalories}
               </span>

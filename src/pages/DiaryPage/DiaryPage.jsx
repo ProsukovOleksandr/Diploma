@@ -5,7 +5,7 @@ import svg from '../../images/svg/sprite.svg';
 import StyledDatepicker from 'components/Calendar/StyledDatepicker';
 import css from './DiaryPage.module.css';
 import { useDispatch /*useSelector*/ } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 import {
   selectConsumedFood,
@@ -32,13 +32,14 @@ import { selectUser } from 'redux/auth/selectors';
 }*/
 const DiaryPage = () => {
   const dispatch = useDispatch();
+const [selectedDate, setSelectedDate] = useState(new Date());
+
 
   const user = useSelector(selectUser);
   const formattedDate = parseISO(user.birthday);
   const initialValues = {
     birthday: formattedDate || '2005-01-01',
   };
-
   function getCurrentDate() {
     const today = new Date();
     const day = today.getDate().toString().padStart(2, '0');
@@ -47,14 +48,23 @@ const DiaryPage = () => {
     return `${day}/${month}/${year}`;
   }
 
+function formatDate(date) {
+  const d = new Date(date);
+  const day = String(d.getDate()).padStart(2, '0');
+  const month = String(d.getMonth() + 1).padStart(2, '0');
+  const year = d.getFullYear();
+  return `${day}/${month}/${year}`;
+}
+
   const productsData = useSelector(selectConsumedFood);
   const exersizesData = useSelector(selectDoneExercise);
   const dailyRateCalories = useSelector(selectDailyCalorieIntake);
   const dailySportMin = useSelector(selectDailyPhysicalActivity);
-  useEffect(() => {
-    const date = getCurrentDate();
-    dispatch(fetchFoodAndExercises(date));
-  }, [dispatch]);
+
+ useEffect(() => {
+  const formatted = formatDate(selectedDate, 'dd/MM/yyyy');
+  dispatch(fetchFoodAndExercises(formatted));
+}, [dispatch, selectedDate]);
   // const params = useSelector(selectGoToParams);
 
   const handleSumbit = values => {};
@@ -91,15 +101,13 @@ const DiaryPage = () => {
   return (
     <section className={css.diaryPage}>
       <div className={css.topBar}>
-        <h1 className={css.header}>Diary</h1>
+        <h1 className={css.header}>Щоденник</h1>
         <Formik initialValues={initialValues} onSubmit={handleSumbit}>
-          <StyledDatepicker
-            selectedDate={getCurrentDate()}
-            setSelectedDate={date => {
-              // const formattedDate = parseISO(date.toISOString());
-            }}
-          />
-        </Formik>
+  <StyledDatepicker
+    selectedDate={selectedDate}
+  setSelectedDate={setSelectedDate}
+  />
+</Formik>
       </div>
       <div className={css.bottomBar}>
         <div className={css.bottomRightBar}>
@@ -109,8 +117,8 @@ const DiaryPage = () => {
               <use href={svg + '#exclamation_mark_icon'}></use>
             </svg>
             <p className={css.reminderText}>
-              Record all your meals in the calorie diary every day. This will
-              help you be aware of your nutrition and make informed choices.
+              Щодня записуйте всі ваші прийоми їжі в щоденник калорій. Це буде
+              допоможе вам бути в курсі свого харчування та зробити усвідомлений вибір.
             </p>
           </div>
         </div>

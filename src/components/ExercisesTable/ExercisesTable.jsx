@@ -108,7 +108,7 @@ function ExerciseModal({ dataEx, closeFunc }) {
                 <div className={style.watcher}>
                   {data && (
                     <div className={style.timer}>
-                      <p className={style.time}>Time</p>
+                      <p className={style.time}>Час</p>
                       <div
                         style={{
                           width: '100px',
@@ -149,7 +149,7 @@ function ExerciseModal({ dataEx, closeFunc }) {
                         </button>
                       )}
                       <p className={style.coment}>
-                        Burned calories:{' '}
+                        Спалені калорії:{' '}
                         <span className={style.calor}>{burned}</span>
                       </p>
                     </div>
@@ -159,25 +159,25 @@ function ExerciseModal({ dataEx, closeFunc }) {
               <div className={style.infoBox}>
                 <div className={style.info}>
                   <p className={style.infoBlock}>
-                    <span className={style.tip}>Name:</span>
+                    <span className={style.tip}>Назва:</span>
                     <span className={style.text}>{data.name}</span>
                   </p>
                   <p className={style.infoBlock}>
-                    <span className={style.tip}>Body Part:</span>
+                    <span className={style.tip}>Частина Тіла:</span>
                     <span className={style.text}>{data.bodyPart}</span>
                   </p>
                   <p className={style.infoBlock}>
-                    <span className={style.tip}>Equipment:</span>
+                    <span className={style.tip}>Обладнання:</span>
                     <span className={style.text}>{data.equipment}</span>
                   </p>
                   <p className={style.infoBlock}>
-                    <span className={style.tip}>Target:</span>
+                    <span className={style.tip}>Ціль:</span>
                     <span className={style.text}>{data.target}</span>
                   </p>
                 </div>
                 <div className={style.btnBox}>
                   <button className={style.addExercise} onClick={handleButton}>
-                    Add to diary
+                    Додати в щоденник
                   </button>
                 </div>
               </div>

@@ -1,11 +1,11 @@
 body {
-  background-color: black;
+  background-color: white;
 }
 
 .diaryPage {
-  background-color: black;
+  background-color: white;
   background-size: contain;
-  color: #efede8;
+  color: #1b1b1b;
   display: flex;
   flex-direction: column;
   padding: 40px 20px 80px;
@@ -31,7 +31,10 @@ body {
   line-height: 18px;
   margin-top: 20px;
   margin-bottom: 40px;
-  color: #efede8a1;
+  color: #131212a1;
+}
+.reminderText{
+  color: #131212a1;
 }
 .reminderIcon{
   width: 24px;
@@ -39,7 +42,7 @@ body {
   padding: 0px;
   display: block;
   fill: var(--beige-color);
-  stroke: #fff;
+  stroke: #000000;
   margin-right: 8px;
 }
 @media screen and (min-width: 375px) {

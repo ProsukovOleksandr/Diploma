@@ -12,9 +12,9 @@ export const DayProducts = ({ productsData }) => {
   return (
     <div className={css.productsContainer}>
       <div className={css.productsTopBar}>
-        <p className={css.productsTitle}>Products</p>
+        <p className={css.productsTitle}>Продукти</p>
         <Link to="/products" className={css.Link}>
-          Add product
+          Додати продукти
           <svg width="16px" height="16px">
             <use href={svg + '#icon-arrow-right'}></use>
           </svg>
@@ -42,17 +42,17 @@ export const DayProducts = ({ productsData }) => {
       ) : (
         <>
           {(!productsData || productsData.length === 0 || error) && (
-            <p className={css.noProductsText}>Not found products</p>
+            <p className={css.noProductsText}>Продукти не знайдено</p>
           )}
 
           {productsData.length !== 0 && (
             <div className={css.productsBottomBar}>
               <ul className={css.adaptiveTitlesList}>
-                <li className={css.adaptiveTitle}>Title</li>
-                <li className={css.adaptiveTitle}>Category</li>
-                <li className={css.adaptiveTitle}>Calories</li>
-                <li className={css.adaptiveTitle}>Weight</li>
-                <li className={css.adaptiveTitle}>Recommend</li>
+                <li className={css.adaptiveTitle}>Назва</li>
+                <li className={css.adaptiveTitle}>Категорія</li>
+                <li className={css.adaptiveTitle}>Калорії</li>
+                <li className={css.adaptiveTitle}>Вага</li>
+                <li className={css.adaptiveTitle}>Рекомендовано</li>
               </ul>
 
               <ul className={css.productsList}>

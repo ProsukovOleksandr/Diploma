@@ -11,44 +11,44 @@ const DayDashboard = ({ diary, bodyData }) => {
         <div className={css.diary_left}>
           <DiaryDashboardItem
           svg="fork-and-knife-icon"
-           title="Daily calorie intake"
+           title="Добова норма споживання калорій"
             content={bodyData.dailyRateCalories}
             className={css.diary_item_red}
           />
           <DiaryDashboardItem
             svg="dumbbell-icon"
-            title="Daily norm of sports"
+            title="Денна норма спорту"
             content={bodyData.dailySportMin}
             className={css.diary_item_red}
-            measurement="min"
+            measurement="хв"
           />
         </div>
         <div className={css.rigth}>
           <div className={css.btns1}>
             <DiaryDashboardItem
             svg="apple-icon"
-               title="Calories consumed"
+               title="Витрачені калорії"
               content={consumedCalories}
             />
             <DiaryDashboardItem
               svg="fire-icon"
-              title="Calories burned"
+              title="Спалені калорії"
               content={burnedCalories}
             />
           </div>
           <div className={css.btns2}>
             <DiaryDashboardItem
               svg="bubble-icon"
-              title="The rest of the calories"
+              title="Решта калорій"
               content={bodyData.dailyRateCalories - consumedCalories}
               type="calories"
             />
             <DiaryDashboardItem
               svg="run-icon"
-               title="The rest of sports"
+               title="Решта спорту"
               content={bodyData.dailySportMin - timeSport}
               type="sport"
-              measurement="min"
+              measurement="хв"
             />
           </div>
         </div>

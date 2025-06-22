@@ -72,17 +72,17 @@ function BurgerMenu({ toggleMenu }) {
           <ul className={css.navList}>
             <li>
               <Link onClick={() => toggleMenu()} to='/diary'>
-                <button className={css.btn} styled='transparent'>Diary</button>
+                <button className={css.btn} styled='transparent'>Щоденник</button>
               </Link>
             </li>
             <li>
               <Link onClick={() => toggleMenu()} to='/products'>
-                <button className={css.btn} styled='transparent'>Products</button>
+                <button className={css.btn} styled='transparent'>Продукти</button>
               </Link>
             </li>
             <li>
               <Link onClick={() => toggleMenu()} to='/exercises'>
-                <button className={css.btn} styled='transparent'>Exercises</button>
+                <button className={css.btn} styled='transparent'>Вправи</button>
               </Link>
             </li>
           </ul>

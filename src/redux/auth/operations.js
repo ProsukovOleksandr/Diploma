@@ -1,7 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://powerpulse-backend.onrender.com';
+axios.defaults.baseURL = 'http://localhost:3000';
+
 
 const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -15,8 +16,11 @@ export const register = createAsyncThunk(
   'auth/register',
   async (formData, thunkAPI) => {
     try {
-      const res = await axios.post('/users/register', formData);
+      const res = await axios.post('/users/register', formData, {
+  withCredentials: true
+});
       setAuthHeader(res.data.token);
+      localStorage.setItem('token', res.data.token);
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -28,8 +32,11 @@ export const logIn = createAsyncThunk(
   'auth/login',
   async (formData, thunkAPI) => {
     try {
-      const res = await axios.post('/users/login', formData);
+      const res = await axios.post('/users/login', formData, {
+  withCredentials: true
+});
       setAuthHeader(res.data.token);
+      localStorage.setItem('token', res.data.token);
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -37,10 +44,13 @@ export const logIn = createAsyncThunk(
   }
 );
 
-export const logOut = createAsyncThunk('auth/logut', async (_, thunkAPI) => {
+export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   try {
-    await axios.post('/users/logout');
+    await axios.post('/users/logout', {
+  withCredentials: true
+});
     clearAuthHeader();
+    localStorage.removeItem('token');
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
   }
@@ -51,22 +61,30 @@ export const refreshUser = createAsyncThunk(
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
     const refreshToken = state.auth.refreshToken;
-    if (refreshToken === null) {
+
+    if (!refreshToken) {
       return thunkAPI.rejectWithValue('Unable to get user');
     }
+
     try {
-      const res = await axios.post('/users/refresh', refreshToken);
+      const res = await axios.post(
+        '/users/refresh',
+        { refreshToken }, 
+      );
+      console.log(res.data)
       return res.data.user;
     } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.response?.data?.message || error.message);
     }
   }
 );
+
 
 export const updateUserParams = createAsyncThunk(
   'auth/params',
   async (params, thunkAPI) => {
     const state = thunkAPI.getState();
+    console.log(state)
     const persistedToken = state.auth.token || state.auth.refreshToken;
     if (persistedToken === null) {
       return thunkAPI.rejectWithValue('Unable to get user');
@@ -74,7 +92,6 @@ export const updateUserParams = createAsyncThunk(
     try {
       setAuthHeader(persistedToken);
       const res = await axios.patch('/users/update', params);
-       console.log(res.data.user)
       return res.data.user;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -92,7 +109,9 @@ export const addUserData = createAsyncThunk(
     }
     try {
       setAuthHeader(storedToken);
-      const res = await axios.put('/users/update', params);
+      const res = await axios.put('/users/update', params, {
+  withCredentials: true
+});
       return res.data.user;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -110,7 +129,9 @@ export const getUserParams = createAsyncThunk(
     }
     try {
       setAuthHeader(persistedToken);
-      const res = await axios.get('/users/current');
+      const res = await axios.get('/users/current', {
+  withCredentials: true
+});
       console.log(res.data)
       return res.data;
     } catch (error) {

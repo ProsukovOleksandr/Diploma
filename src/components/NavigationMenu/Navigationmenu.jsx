@@ -6,17 +6,17 @@ function NavigationMenu() {
       <ul className={css.navigation_list}>
         <li>
           <NavLink to="/diary" className={css.navigation_link}>
-            Diary
+            Щоденник
           </NavLink>
         </li>
         <li>
           <NavLink to="/products" className={css.navigation_link}>
-            Products
+            Продукти
           </NavLink>
         </li>
         <li>
           <NavLink to="/exercises" className={css.navigation_link}>
-            Exercises
+            Вправи
           </NavLink>
         </li>
       </ul>

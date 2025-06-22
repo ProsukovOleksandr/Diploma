@@ -4,7 +4,7 @@
     background-repeat: no-repeat;
     background-position: right bottom;
     background-size: contain;
-    background-color: black;
+    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,7 +22,7 @@
 .title {
     max-width: 335px;
     max-height: 120px;
-    color: #EFEDE8;
+    color: black;
     font-size: 38px;
     font-weight: 500;
     line-height: 40px;
@@ -67,7 +67,7 @@
     border: 1px solid;
     border-color: #EFEDE84D;
     border-radius: 12px;
-    color: #EFEDE8;
+    color: black;
     font-size: 16px;
     font-weight: 500;
     line-height: 18px;
@@ -97,7 +97,7 @@
     .home_container{
         background-image: url('../../images/tablet_images/hero-tablet.png');
         padding-left: 32px;
-        padding-right: 32px;
+        padding-right: 500px;
         background-position: right bottom;
         background-size: contain;
         align-items: start;
@@ -137,6 +137,7 @@
         background-image: url('../../images/desktop_images/hero-desktop.png');
         padding: 0;
         padding-left: 96px;
+        padding-right: 1000px;
         background-position: right bottom;
         background-size: contain;
     }

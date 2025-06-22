@@ -5,8 +5,8 @@
   height: auto;
 
   border-radius: 12px;
-  border: 1px solid rgba(239, 237, 232, 0.2);
-  background: rgba(239, 237, 232, 0.05);
+  border: 1px solid rgba(51, 51, 49, 0.2);
+  background: rgba(236, 235, 232, 0.05);
 
   z-index: 10;
 
@@ -39,7 +39,7 @@
   text-transform: uppercase;
 
   border-radius: 4px;
-  background: rgba(239, 237, 232, 0.05);
+  background: rgba(66, 66, 65, 0.05);
 }
 
 .addProductBtn {
@@ -102,7 +102,7 @@
 }
 
 .recommendText {
-  color: EFEDE8;
+  color: black;
 }
 
 .singleCardTitle {
@@ -147,7 +147,7 @@
 }
 
 .cardProdStatItemText {
-  color: rgba(239, 237, 232, 0.4);
+  color: rgba(17, 17, 17, 0.4);
 }
 
 .warning {
@@ -180,7 +180,7 @@
   margin-bottom: 16px;
   font-family: Roboto-400;
   font-size: 14px;
-  color: rgba(239, 237, 232, 0.3);
+  color: rgba(59, 59, 57, 0.3);
   line-height: 1.29;
 
   @media screen and (min-width: 768px) {

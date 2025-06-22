@@ -1,5 +1,5 @@
 .DayExercises {
-  border: 1px solid #efede833;
+  border: 1px solid #302f2e33;
     border-radius: 12px;
     background: linear-gradient(
       0deg,
@@ -26,7 +26,7 @@
     font-size: 14px;
     line-height: 18px;
     text-align: left;
-    color: #efede843;
+    color: #504f4d43;
   }
   .DayExercisesHead a {
     font-family: Roboto-500;
@@ -73,6 +73,7 @@
     position: relative;
     border-spacing: 8px;
     border: none;
+    overflow: auto;
   }
 
   .DayExercises thead {
@@ -85,7 +86,7 @@
     margin-top: 8px;
     max-height: 740px;
     overflow-y: auto;
-    overflow-x: hidden;
+    overflow-x: auto;
     padding: 0px;
   }
   .DayExercises thead,
@@ -109,7 +110,7 @@
 
   .DayExercises td {
     border-radius: 12px;
-    border: 1px solid #efede833;
+    border: 1px solid #41403f33;
     padding-left: 14px;
     padding-right: 14px;
     font-size: 14px;
@@ -119,37 +120,43 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    color:  #EFEDE8;
+    color:  #0f0f0f;
 
   }
 
   .tdBodyPart,
   .thBodyPart {
     width: 297px;
+    font-size: 8px;
    }
   .tdEquipment,
   .thEquipment {
     width: 297px;
+    font-size: 8px;
 
   }
   .tdName,
   .thName {
  width: 297px;
+ font-size: 8px;
 
   }
   .tdTarget,
   .thTarget {
    width: 80px;
+   font-size: 8px;
 
   }
   .tdBurnedCalories,
   .thBurnedCalories {
     width: 80px;
+    font-size: 8px;
 
   }
   .tdTime,
   .thTime {
     width: 76px;
+    font-size: 8px;
 
   }
   .btnAddExersisec {
@@ -190,7 +197,7 @@
     width: 125px;
     font-size: 14px;
     line-height: 18px;
-    color: #efede83a;
+    color: #3d3d3b3a;
     margin: 0  auto;
     margin-top: 80px;
   }

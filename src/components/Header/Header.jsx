@@ -47,7 +47,7 @@ function Header() {
         <div className={css.ctrl_container}>
           {!goToParams && windowWidth >= 1440 && <NavigationMenu />}
           <NavLink to="/profile" className={css.settings_button}>
-            <svg width={24} height={24}>
+            <svg className={css.settings_svg} width={24} height={24}>
               <use href={svg + `#settings_icon`}></use>
             </svg>
           </NavLink>

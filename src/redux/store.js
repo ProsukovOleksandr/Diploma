@@ -28,6 +28,7 @@ import { productsReducer } from './products/productsSlice';
 const persistConfig = {
   key: 'root',
   storage,
+  whitelist: ['token', 'refreshToken']
   // blacklist: ['user'],
 };
 

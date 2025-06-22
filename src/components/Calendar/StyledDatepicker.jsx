@@ -1,46 +1,47 @@
-import { useState } from 'react';
+//import { useState } from 'react';
 import { format, addDays, subDays } from 'date-fns';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import styles from './StyledDatepicker.module.css';
+import styles from './StyledDatepicker.module.css'; // ТВОЇ стилі
 
-const StyledDatepicker = () => {
-  const [selectedDate, setSelectedDate] = useState(new Date());
-
+const StyledDatepicker = ({ selectedDate, setSelectedDate }) => {
   const CustomInput = ({ value, onClick }) => {
     return (
       <button className={styles.titleWrapper} onClick={onClick}>
-        {format(selectedDate, 'dd-MM-yyyy')}
+        {format(new Date(selectedDate), 'dd-MM-yyyy')}
       </button>
     );
   };
 
   const handlePreviousDay = () => {
-    setSelectedDate(prevDate => subDays(prevDate, 1));
+    setSelectedDate(prev => subDays(new Date(prev), 1));
   };
 
   const handleNextDay = () => {
-    setSelectedDate(prevDate => addDays(prevDate, 1));
+    setSelectedDate(prev => addDays(new Date(prev), 1));
   };
 
   return (
-    <>
+    <div>
       <DatePicker
-        selected={selectedDate}
-        onChange={date => {
-          setSelectedDate(date);
-        }}
+        selected={new Date(selectedDate)}
+        onChange={date => setSelectedDate(date)}
         customInput={<CustomInput />}
-        dateFormat={'dd MM yyyy'}
+        dateFormat={'dd-MM-yyyy'}
         calendarStartDay={1}
         formatWeekDay={day => day.substr(0, 1)}
-        className={styles.reactDatepicker}
+        // Додаємо свій CSS-клас
+        popperClassName={styles.reactDatepicker}
+        // Переопреділяємо стандартні стилі на свої
+        wrapperClassName={styles.reactDatepicker}
+        // щоб triangle не заважав
+        showPopperArrow={false}
       />
       <div className={styles.datepickerControls}>
-        <button onClick={handlePreviousDay}>{'\u2190'}</button>
-        <button onClick={handleNextDay}>{'\u2192'}</button>
+        <button className={styles.datepickerBtn} onClick={handlePreviousDay}>{'\u2190'}</button>
+        <button className={styles.datepickerBtn} onClick={handleNextDay}>{'\u2192'}</button>
       </div>
-    </>
+    </div>
   );
 };
 

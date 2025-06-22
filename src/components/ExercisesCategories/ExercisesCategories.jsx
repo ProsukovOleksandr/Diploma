@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux';
 
 const ExercisesCategories = () => {
   const dispatch = useDispatch();
-  const [activeSubcategory, setActiveSubcategory] = useState('Body parts');
+  const [activeSubcategory, setActiveSubcategory] = useState('Частини тіла');
 
   const handleSubcategoryClick = subcategory => {
     setActiveSubcategory(subcategory);
@@ -23,29 +23,29 @@ const ExercisesCategories = () => {
       <div className={styles.categoryButtons}>
         <button
           className={`${styles.btnCategories} ${
-            activeSubcategory === 'Body parts' ? styles.active : ''
+            activeSubcategory === 'Частини тіла' ? styles.active : ''
           }`}
-          onClick={() => handleSubcategoryClick('Body parts')}
+          onClick={() => handleSubcategoryClick('Частини тіла')}
         >
-          Body Parts
+          Частини Тіла
         </button>
 
         <button
           className={`${styles.btnCategories} ${
-            activeSubcategory === 'Muscles' ? styles.active : ''
+            activeSubcategory === "М'язи" ? styles.active : ''
           }`}
-          onClick={() => handleSubcategoryClick('Muscles')}
+          onClick={() => handleSubcategoryClick("М'язи")}
         >
-          Muscles
+          М'язи
         </button>
 
         <button
           className={`${styles.btnCategories} ${
-            activeSubcategory === 'Equipment' ? styles.active : ''
+            activeSubcategory === 'Обладнання' ? styles.active : ''
           }`}
-          onClick={() => handleSubcategoryClick('Equipment')}
+          onClick={() => handleSubcategoryClick('Обладнання')}
         >
-          Equipments
+          Обладнання
         </button>
       </div>
 
